@@ -5,13 +5,14 @@ import { servicesData } from '@/data/siteData';
 export default function Services() {
   const headerRef = useRef(null);
   const cardRefs  = useRef([]);
+  const ctaRef    = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
       { threshold: 0.1 }
     );
-    [headerRef, ...cardRefs.current].forEach(r => (r?.current ?? r) && observer.observe(r?.current ?? r));
+    [headerRef, ctaRef, ...cardRefs.current].forEach(r => (r?.current ?? r) && observer.observe(r?.current ?? r));
     return () => observer.disconnect();
   }, []);
 
@@ -84,7 +85,7 @@ export default function Services() {
         </div>
 
         {/* CTA Banner */}
-        <div className="reveal relative bg-gradient-to-r from-violet-50 to-purple-50/60 backdrop-blur-xl
+        <div ref={ctaRef} className="reveal relative bg-gradient-to-r from-violet-50 to-purple-50/60 backdrop-blur-xl
                         border border-violet-200/50 rounded-[28px] px-14 py-12
                         flex flex-col sm:flex-row items-center justify-between gap-8 overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300/50 to-transparent" />

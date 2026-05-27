@@ -18,6 +18,7 @@ export const galleryData = [
   { id: 13, title: "Golden Pharaoh", category: "Characters", image: "https://picsum.photos/600/600?random=205", height: "medium" },
   { id: 14, title: "Ice Queen", category: "Characters", image: "https://picsum.photos/600/900?random=206", height: "tall" },
   { id: 15, title: "Shadow Ninja", category: "Characters", image: "https://picsum.photos/600/550?random=207", height: "medium" },
+  { id: 38, title: "Shadow Ninja", category: "Characters", image: "https://picsum.photos/600/550?random=208", height: "medium" },
 
   // Symbols
   { id: 16, title: "Royal Crown", category: "Symbols", image: "https://picsum.photos/600/600?random=301", height: "medium" },
