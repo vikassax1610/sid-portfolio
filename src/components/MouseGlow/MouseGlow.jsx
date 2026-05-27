@@ -27,7 +27,7 @@ export default function MouseGlow() {
          style={{
            width: '480px',
            height: '480px',
-           background: 'radial-gradient(circle, rgba(124,58,237,.06) 0%, transparent 70%)',
+           background: 'radial-gradient(circle, rgba(23, 105, 255,.06) 0%, transparent 70%)',
            mixBlendMode: 'multiply',
          }} />
   );

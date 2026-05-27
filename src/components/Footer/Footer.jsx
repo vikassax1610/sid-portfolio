@@ -38,37 +38,37 @@ export default function Footer() {
     <footer className="relative">
       {/* Animated gradient bar */}
       <div className="h-[3px] bg-[length:200%_auto] animate-gradient"
-           style={{ background:'linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #f59e0b, #7c3aed)' }} />
+           style={{ background:'linear-gradient(90deg, #1769FF, #1769FF, #1769FF, #f59e0b, #1769FF)' }} />
 
-      <div className="bg-white/70 backdrop-blur-2xl border-t border-white/85 shadow-[0_-4px_40px_rgba(124,58,237,.07)]">
+      <div className="bg-glass backdrop-blur-2xl border-t border-glass-border shadow-[0_-4px_40px_rgba(23, 105, 255,.07)]">
         <div className="max-w-7xl mx-auto px-8 pt-16 pb-10">
 
           {/* Top row */}
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1.2fr] gap-14 pb-12 border-b border-violet-100/60 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1.2fr] gap-14 pb-12 border-b border-border-subtle mb-8">
 
             {/* Logo + tagline + socials */}
             <div className="flex flex-col gap-5">
               <a href="#home" onClick={e => go(e,'#home')} className="flex items-center gap-3 no-underline w-fit group">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-600 via-purple-500 to-pink-500
+                <div className="w-11 h-11 rounded-xl bg-primary hover:bg-primary-hover transition-colors
                                 flex items-center justify-center text-white font-black text-lg
-                                shadow-lg shadow-violet-300/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[-5deg]">
+                                shadow-custom shadow-custom transition-all duration-300 group-hover:scale-110 group-hover:rotate-[-5deg]">
                   S
                 </div>
-                <span className="font-black text-[1.08rem]">
-                  <span className="bg-gradient-to-r from-violet-600 to-purple-500 bg-clip-text text-transparent">SlotArt</span>
-                  <span className="text-slate-800"> Artist</span>
+                <span className="font-heading font-[800] text-[1.2rem] leading-none tracking-[-0.02em]">
+                  <span className="bg-primary hover:bg-primary-hover transition-colors bg-clip-text text-transparent">Sidhant</span>
+                  <span className="text-text-main"> Sharma</span>
                 </span>
               </a>
-              <p className="text-[.88rem] text-gray-500 leading-[1.75] max-w-[300px]">
+              <p className="text-[.95rem] font-sans font-medium text-text-sec leading-[1.8] max-w-[320px]">
                 Premium slot game art that captivates players and powers unforgettable gaming experiences.
               </p>
               <div className="flex gap-2.5">
                 {socialLinks.map(s => (
                   <a key={s.name} href={s.href} aria-label={s.name} title={s.name}
-                     className="w-10 h-10 rounded-xl bg-violet-100/60 border border-violet-200/60
-                                flex items-center justify-center text-violet-600
+                     className="w-10 h-10 rounded-xl bg-primary-soft border border-border-subtle
+                                flex items-center justify-center text-primary
                                 transition-all duration-300 hover:bg-gradient-to-br hover:from-violet-600 hover:to-purple-500
-                                hover:text-white hover:border-transparent hover:-translate-y-1 hover:scale-110 hover:shadow-md hover:shadow-violet-300/50
+                                hover:text-white hover:border-transparent hover:-translate-y-1 hover:scale-110 hover:shadow-custom hover:shadow-custom
                                 no-underline">
                     {s.icon}
                   </a>
@@ -78,14 +78,14 @@ export default function Footer() {
 
             {/* Navigation */}
             <div className="flex flex-col gap-5">
-              <h4 className="text-[.72rem] font-extrabold text-gray-400 uppercase tracking-[.1em]">Navigation</h4>
+              <h4 className="text-[13px] font-subheading font-[600] text-text-sec uppercase tracking-widest">Navigation</h4>
               <ul className="flex flex-col gap-2.5 list-none p-0">
                 {navLinks.map(l => (
                   <li key={l.href}>
                     <a href={l.href} onClick={e => go(e, l.href)}
-                       className="flex items-center gap-2 text-[.88rem] font-medium text-slate-700 no-underline
-                                  transition-all duration-300 hover:text-violet-600 hover:gap-4 group">
-                      <span className="w-0 group-hover:w-3.5 h-0.5 bg-gradient-to-r from-violet-600 to-pink-500 rounded-full transition-all duration-300" />
+                       className="flex items-center gap-2 text-[.95rem] font-sans font-medium text-text-sec no-underline
+                                  transition-all duration-300 hover:text-primary hover:gap-4 group">
+                      <span className="w-0 group-hover:w-3.5 h-0.5 bg-primary hover:bg-primary-hover transition-colors rounded-full transition-all duration-300" />
                       {l.label}
                     </a>
                   </li>
@@ -95,7 +95,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="flex flex-col gap-5">
-              <h4 className="text-[.72rem] font-extrabold text-gray-400 uppercase tracking-[.1em]">Get In Touch</h4>
+              <h4 className="text-[13px] font-subheading font-[600] text-text-sec uppercase tracking-widest">Get In Touch</h4>
               <div className="flex flex-col gap-3">
                 {[
                   { icon:'📧', text:'hello@slotartist.com' },
@@ -103,7 +103,7 @@ export default function Footer() {
                   { icon:'📍', text:'Remote — Worldwide' },
                   { icon:'🕐', text:'24hr Response Time' },
                 ].map((c, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[.86rem] text-slate-600 font-medium">
+                  <div key={i} className="flex items-center gap-2.5 text-[.95rem] font-sans font-medium text-text-sec">
                     <span>{c.icon}</span><span>{c.text}</span>
                   </div>
                 ))}
@@ -113,13 +113,13 @@ export default function Footer() {
 
           {/* Bottom row */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[.82rem] text-gray-400">
-              © {new Date().getFullYear()} SlotArt Artist. All rights reserved.
+            <p className="text-[13px] font-sans font-medium text-text-sec">
+              © {new Date().getFullYear()} Sidhant Sharma. All rights reserved.
             </p>
             <div className="flex gap-5">
               {['Privacy Policy','Terms of Service'].map(l => (
                 <a key={l} href="#"
-                   className="text-[.8rem] text-gray-400 no-underline transition-colors hover:text-violet-600">
+                   className="text-[13px] font-sans font-medium text-text-sec no-underline transition-colors hover:text-primary">
                   {l}
                 </a>
               ))}

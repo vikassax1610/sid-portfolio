@@ -56,7 +56,7 @@ export default function Testimonials() {
     <section className="py-36 relative overflow-hidden">
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                       w-[700px] h-[700px] rounded-full opacity-30"
-           style={{ background:'radial-gradient(circle, rgba(124,58,237,.06), transparent 70%)', filter:'blur(80px)' }} />
+           style={{ background:'radial-gradient(circle, rgba(23, 105, 255,.06), transparent 70%)', filter:'blur(80px)' }} />
 
       <div className="max-w-[1050px] mx-auto px-8">
 
@@ -68,10 +68,10 @@ export default function Testimonials() {
             </svg>
             Testimonials
           </div>
-          <h2 className="text-[clamp(2.2rem,3.5vw,3.2rem)] font-black text-slate-900 tracking-tight">
+          <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-heading font-bold text-text-main tracking-tight">
             Loved by <span className="gradient-text">Studio Teams</span>
           </h2>
-          <p className="text-[1.05rem] text-gray-500 leading-relaxed max-w-[440px]">
+          <p className="text-[1.125rem] font-sans font-medium text-text-sec leading-[1.8] max-w-[460px]">
             Don&apos;t take my word for it — here&apos;s what clients say about working together.
           </p>
         </div>
@@ -83,27 +83,27 @@ export default function Testimonials() {
             {testimonialsData.map((t, i) => (
               <div key={t.id}
                    className="absolute w-[580px] max-w-[calc(100vw-80px)]
-                              bg-white/70 backdrop-blur-2xl border border-white/90 rounded-[28px] p-11
-                              shadow-lg shadow-violet-100/50 flex flex-col gap-6 cursor-pointer"
+                              bg-glass backdrop-blur-2xl border border-glass-border rounded-[28px] p-11
+                              shadow-custom shadow-custom flex flex-col gap-6 cursor-pointer"
                    style={{ ...getStyle(i), transition:'all .5s cubic-bezier(.4,0,.2,1)' }}
                    onClick={() => setActive(i)}>
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent rounded-t-[28px]" />
 
                 {/* Quote */}
-                <div className="text-[5rem] leading-[.4] font-black text-violet-400/40 select-none" style={{ fontFamily:'Georgia,serif' }}>&ldquo;</div>
+                <div className="text-[5rem] leading-[.4] font-black text-primary select-none" style={{ fontFamily:'Georgia,serif' }}>&ldquo;</div>
 
-                <p className="text-gray-600 text-[1rem] leading-[1.85] italic">{t.review}</p>
+                <p className="text-text-sec font-sans font-medium text-[1.125rem] leading-[1.8] italic">{t.review}</p>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-violet-200/50 flex-shrink-0"
+                  <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-border-subtle flex-shrink-0"
                        style={{ width:'52px', height:'52px' }}>
                     <Image src={t.image} alt={t.name} width={52} height={52}
                            className="w-full h-full object-cover rounded-full" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <Stars count={t.stars} />
-                    <p className="font-extrabold text-slate-900 text-[.93rem]">{t.name}</p>
-                    <p className="text-gray-400 text-[.76rem] font-medium">{t.role}</p>
+                    <p className="font-subheading font-[600] text-text-main text-[1.125rem]">{t.name}</p>
+                    <p className="text-text-sec text-[13px] font-subheading font-[600] uppercase tracking-widest">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -113,10 +113,10 @@ export default function Testimonials() {
           {/* Controls */}
           <div className="flex items-center justify-center gap-6">
             <button onClick={() => go(-1)}
-                    className="w-12 h-12 rounded-full bg-white/70 backdrop-blur-md border border-violet-200/60
-                               flex items-center justify-center text-violet-600
-                               shadow-md shadow-violet-100/40
-                               transition-all duration-300 hover:scale-110 hover:bg-gradient-to-br hover:from-violet-600 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-violet-300/50"
+                    className="w-12 h-12 rounded-full bg-glass backdrop-blur-md border border-border-subtle
+                               flex items-center justify-center text-primary
+                               shadow-custom shadow-custom
+                               transition-all duration-300 hover:scale-110 hover:bg-gradient-to-br hover:from-violet-600 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-custom hover:shadow-custom"
                     aria-label="Previous">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M15 18l-6-6 6-6"/>
@@ -128,17 +128,17 @@ export default function Testimonials() {
                 <button key={i} onClick={() => setActive(i)}
                         className={`h-2 rounded-full transition-all duration-300
                                    ${i === active
-                                     ? 'w-7 bg-gradient-to-r from-violet-600 to-pink-500'
+                                     ? 'w-7 bg-primary hover:bg-primary-hover transition-colors'
                                      : 'w-2 bg-violet-200 hover:bg-violet-300'}`}
                         aria-label={`Go to ${i+1}`} />
               ))}
             </div>
 
             <button onClick={() => go(1)}
-                    className="w-12 h-12 rounded-full bg-white/70 backdrop-blur-md border border-violet-200/60
-                               flex items-center justify-center text-violet-600
-                               shadow-md shadow-violet-100/40
-                               transition-all duration-300 hover:scale-110 hover:bg-gradient-to-br hover:from-violet-600 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-violet-300/50"
+                    className="w-12 h-12 rounded-full bg-glass backdrop-blur-md border border-border-subtle
+                               flex items-center justify-center text-primary
+                               shadow-custom shadow-custom
+                               transition-all duration-300 hover:scale-110 hover:bg-gradient-to-br hover:from-violet-600 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-custom hover:shadow-custom"
                     aria-label="Next">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M9 18l6-6-6-6"/>

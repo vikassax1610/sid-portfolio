@@ -55,30 +55,16 @@ export default function Hero() {
   const scrollTo = (e, id) => { e.preventDefault(); document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' }); };
 
   return (
-    <section id="home" ref={heroRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-16">
-
-      {/* ── Blobs ── */}
-      <div className="pointer-events-none absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-60 animate-blob"
-           style={{ background: 'radial-gradient(circle, rgba(124,58,237,.18) 0%, transparent 70%)', filter: 'blur(80px)' }} />
-      <div className="pointer-events-none absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full opacity-50 animate-blob [animation-delay:3s]"
-           style={{ background: 'radial-gradient(circle, rgba(236,72,153,.14) 0%, transparent 70%)', filter: 'blur(80px)' }} />
-      <div className="pointer-events-none absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full opacity-40 animate-blob [animation-delay:6s]"
-           style={{ background: 'radial-gradient(circle, rgba(99,102,241,.12) 0%, transparent 70%)', filter: 'blur(80px)' }} />
-
-      {/* ── Particles ── */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {particles.map((p, i) => (
-          <div key={i} className="absolute rounded-full animate-particle"
+      <section id="home" ref={heroRef}
+               className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-16"
                style={{
-                 left: `${p.left}%`, bottom: 0,
-                 animationDelay: `${p.delay}s`, animationDuration: `${p.dur}s`,
-                 width: `${p.size}px`, height: `${p.size}px`,
-                 background: 'linear-gradient(135deg, rgba(124,58,237,.5), rgba(236,72,153,.5))',
-               }} />
-        ))}
-      </div>
-
+                 background: `
+                   radial-gradient(circle at top left, rgba(23,105,255,.08), transparent 35%),
+                   radial-gradient(circle at bottom right, rgba(255,180,0,.06), transparent 35%),
+                   #FAFAF9
+                 `
+               }}>
+        
       {/* ── Main Grid ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
@@ -91,13 +77,13 @@ export default function Hero() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-[clamp(2.6rem,4.5vw,4.2rem)] font-black leading-[1.06] tracking-tight text-slate-900 animate-fade-up [animation-delay:.1s]">
+          <h1 className="text-[clamp(3.5rem,6vw,5.5rem)] font-heading font-[800] leading-[0.95] tracking-[-0.04em] text-text-main animate-fade-up [animation-delay:.1s]">
             I Create Art That{' '}
             <span className="gradient-text-vivid">Brings Winnings</span>{' '}
             To Life
           </h1>
 
-          <p className="text-[1.08rem] text-gray-500 leading-[1.85] max-w-[520px] animate-fade-up [animation-delay:.2s]">
+          <p className="text-[1.125rem] font-sans font-medium text-text-sec leading-[1.8] max-w-[540px] animate-fade-up [animation-delay:.2s]">
             Specializing in high-quality slot game art that captivates players
             and enhances gameplay. From wild symbols to full game skins.
           </p>
@@ -106,10 +92,10 @@ export default function Hero() {
           <div className="flex gap-4 flex-wrap animate-fade-up [animation-delay:.3s]">
             <a href="#portfolio" onClick={e => scrollTo(e, '#portfolio')}
                className="relative overflow-hidden inline-flex items-center gap-2.5 px-9 py-4
-                          bg-gradient-to-r from-violet-600 via-purple-500 to-pink-500
-                          text-white font-bold text-[.97rem] rounded-full no-underline
-                          shadow-xl shadow-violet-300/50
-                          transition-all duration-300 hover:-translate-y-1 hover:scale-[1.04] hover:shadow-2xl hover:shadow-violet-300/60 group">
+                          bg-primary hover:bg-primary-hover transition-colors
+                          text-white font-subheading font-[600] text-[.97rem] rounded-full no-underline
+                          shadow-custom shadow-custom
+                          transition-all duration-300 hover:-translate-y-1 hover:scale-[1.04] hover:shadow-custom-hover hover:shadow-custom group">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent
                                -translate-x-full group-hover:translate-x-full transition-transform duration-500" />
               View Portfolio
@@ -119,9 +105,9 @@ export default function Hero() {
             </a>
             <a href="#contact" onClick={e => scrollTo(e, '#contact')}
                className="inline-flex items-center gap-2.5 px-9 py-[15px]
-                          bg-white/70 backdrop-blur-sm text-violet-600 font-bold text-[.97rem] rounded-full no-underline
-                          border-2 border-violet-200
-                          transition-all duration-300 hover:bg-violet-50 hover:border-violet-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-100/60">
+                          bg-glass backdrop-blur-sm text-primary font-subheading font-[600] text-[.97rem] rounded-full no-underline
+                          border-2 border-border-subtle
+                          transition-all duration-300 hover:bg-primary-soft hover:border-border-subtle hover:-translate-y-1 hover:shadow-custom hover:shadow-custom">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               Watch Reel
             </a>
@@ -132,7 +118,7 @@ export default function Hero() {
             {/* Avatars */}
             <div className="flex items-center">
               {avatars.map((src, i) => (
-                <div key={i} className="w-11 h-11 rounded-full border-[3px] border-white overflow-hidden shadow-md
+                <div key={i} className="w-11 h-11 rounded-full border-[3px] border-white overflow-hidden shadow-custom
                                         transition-all duration-300 hover:-translate-y-1 hover:scale-110"
                      style={{ marginLeft: i > 0 ? '-10px' : 0, zIndex: avatars.length - i }}>
                   <Image src={src} alt={`Client ${i+1}`} width={44} height={44}
@@ -141,18 +127,18 @@ export default function Hero() {
               ))}
             </div>
             <div className="ml-2 flex flex-col">
-              <span className="text-[1.3rem] font-black text-slate-900">50+</span>
-              <span className="text-xs text-gray-400 font-medium mt-0.5">Happy Clients</span>
+              <span className="text-[1.3rem] font-heading font-bold text-text-main">50+</span>
+              <span className="text-[13px] text-text-sec font-subheading font-[600] uppercase tracking-widest mt-0.5">Happy Clients</span>
             </div>
             <div className="w-px h-9 bg-violet-200" />
             <div className="flex flex-col">
-              <span className="text-[1.3rem] font-black text-slate-900">100+</span>
-              <span className="text-xs text-gray-400 font-medium mt-0.5">Projects</span>
+              <span className="text-[1.3rem] font-heading font-bold text-text-main">100+</span>
+              <span className="text-[13px] text-text-sec font-subheading font-[600] uppercase tracking-widest mt-0.5">Projects</span>
             </div>
             <div className="w-px h-9 bg-violet-200" />
             <div className="flex flex-col">
-              <span className="text-[1.3rem] font-black text-slate-900">5★</span>
-              <span className="text-xs text-gray-400 font-medium mt-0.5">Avg Rating</span>
+              <span className="text-[1.3rem] font-heading font-bold text-text-main">5★</span>
+              <span className="text-[13px] text-text-sec font-subheading font-[600] uppercase tracking-widest mt-0.5">Avg Rating</span>
             </div>
           </div>
         </div>
@@ -163,12 +149,12 @@ export default function Hero() {
 
             {/* Glow */}
             <div className="absolute inset-[-30px] rounded-full opacity-60 animate-pulse-glow pointer-events-none"
-                 style={{ background:'radial-gradient(circle, rgba(124,58,237,.25), transparent 70%)', filter:'blur(40px)' }} />
+                 style={{ background:'radial-gradient(circle, rgba(23, 105, 255,.25), transparent 70%)', filter:'blur(40px)' }} />
 
             {/* Card */}
             <div className="relative z-10 rounded-[28px] overflow-hidden
-                            bg-white/60 backdrop-blur-xl border-2 border-white/90
-                            shadow-[0_30px_80px_rgba(124,58,237,.18),0_0_0_1px_rgba(255,255,255,.5)]
+                            bg-glass backdrop-blur-xl border-2 border-glass-border
+                            shadow-[0_30px_80px_rgba(23, 105, 255,.18),0_0_0_1px_rgba(255,255,255,.5)]
                             group">
               <Image src="https://picsum.photos/520/640?random=800" alt="Featured Slot Art"
                      width={520} height={640} priority
@@ -176,9 +162,9 @@ export default function Hero() {
               <div className="absolute inset-0"
                    style={{ background:'linear-gradient(to bottom, transparent 60%, rgba(30,27,75,.45))' }} />
               <div className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap
-                              px-5 py-2 bg-white/90 backdrop-blur-md rounded-full
-                              text-[.78rem] font-bold text-violet-600
-                              border border-white/90 shadow-lg shadow-violet-100/50">
+                              px-5 py-2 bg-glass backdrop-blur-md rounded-full
+                              text-[13px] font-subheading font-[600] uppercase tracking-widest text-primary
+                              border border-glass-border shadow-custom shadow-custom">
                 ✨ Featured Work
               </div>
             </div>
@@ -187,13 +173,13 @@ export default function Hero() {
             {floatingAssets.map((a, i) => (
               <div key={i} className="absolute flex flex-col items-center gap-1 animate-float z-20"
                    style={{ top:a.top, bottom:a.bottom, left:a.left, right:a.right, animationDelay:a.delay }}>
-                <div className="w-14 h-14 bg-white/85 backdrop-blur-xl border border-white/90 rounded-2xl
+                <div className="w-14 h-14 bg-white/85 backdrop-blur-xl border border-glass-border rounded-2xl
                                 flex items-center justify-center text-[1.5rem]
-                                shadow-lg shadow-violet-200/50 transition-transform duration-300 hover:scale-110">
+                                shadow-custom shadow-custom transition-transform duration-300 hover:scale-110">
                   {a.emoji}
                 </div>
-                <span className="text-[.58rem] font-black text-violet-600 uppercase tracking-wider
-                                 bg-white/90 px-2 py-0.5 rounded-full backdrop-blur-md">
+                <span className="text-[12px] font-subheading font-[600] text-primary uppercase tracking-widest
+                                 bg-glass px-3 py-1 rounded-full backdrop-blur-md">
                   {a.label}
                 </span>
               </div>
@@ -204,10 +190,10 @@ export default function Hero() {
 
       {/* ── Scroll Indicator ── */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 z-10 animate-fade-up [animation-delay:1s]">
-        <div className="w-6 h-9 border-2 border-violet-300 rounded-full flex items-start justify-center pt-1.5">
-          <div className="w-1 h-2 bg-violet-500 rounded-full animate-scroll-wheel" />
+        <div className="w-6 h-9 border-2 border-border-subtle rounded-full flex items-start justify-center pt-1.5">
+          <div className="w-1 h-2 bg-primary rounded-full animate-scroll-wheel" />
         </div>
-        <span className="text-[.7rem] text-gray-400 uppercase tracking-[.1em]">Scroll to explore</span>
+        <span className="text-[13px] font-subheading font-[600] text-text-sec uppercase tracking-[.15em]">Scroll to explore</span>
       </div>
     </section>
   );

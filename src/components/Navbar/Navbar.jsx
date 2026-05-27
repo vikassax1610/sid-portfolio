@@ -33,7 +33,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500
       ${
         scrolled
-          ? "py-3 bg-white/80 backdrop-blur-2xl border-b border-white/90 shadow-lg shadow-violet-100/40"
+          ? "py-3 bg-glass backdrop-blur-2xl border-b border-glass-border shadow-custom shadow-custom"
           : "py-5"
       }`}
     >
@@ -45,18 +45,18 @@ export default function Navbar() {
           className="flex items-center gap-3 no-underline flex-shrink-0 group"
         >
           <div
-            className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 via-blue-500 to-blue-500
+            className="w-11 h-11 rounded-xl bg-primary hover:bg-primary-hover transition-colors
                           flex items-center justify-center text-white font-black text-lg
-                          shadow-lg shadow-blue-300/50
+                          shadow-custom shadow-custom
                           transition-all duration-300 group-hover:scale-110 group-hover:rotate-[-5deg]"
           >
             S
           </div>
-          <span className="font-black text-[1.1rem] font-[Outfit] leading-none">
-            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+          <span className="font-heading font-[800] text-[1.2rem] leading-none tracking-[-0.02em]">
+            <span className="gradient-text-vivid">
               Sidhant
             </span>
-            <span className="text-slate-800"> Sharma</span>
+            <span className="text-text-main"> Sharma</span>
           </span>
         </a>
 
@@ -69,18 +69,18 @@ export default function Navbar() {
                 <a
                   href={href}
                   onClick={(e) => go(e, href)}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full no-underline transition-all duration-300
+                  className={`relative px-4 py-2 text-[14px] font-subheading font-[600] uppercase tracking-widest rounded-full no-underline transition-all duration-300
                      ${
                        active === id
-                         ? "text-blue-600 bg-blue-50"
-                         : "text-blue-950 hover:text-blue-600 hover:bg-blue-50/70"
+                         ? "text-primary bg-primary-soft"
+                         : "text-primary hover:text-primary hover:bg-primary-soft"
                      }`}
                 >
                   {label}
                   {active === id && (
                     <span
                       className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-0.5
-                                     rounded-full bg-gradient-to-r from-cyan-600 to-blue-500"
+                                     rounded-full bg-primary"
                     />
                   )}
                 </a>
@@ -94,10 +94,10 @@ export default function Navbar() {
           href="#contact"
           onClick={(e) => go(e, "#contact")}
           className="hidden lg:flex items-center gap-2 px-6 py-2.5 flex-shrink-0 whitespace-nowrap no-underline
-                      font-bold text-sm text-white rounded-full
-                      bg-gradient-to-r from-blue-600 via-blue-500 to-blue-500
-                      shadow-lg shadow-blue-300/50
-                      transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-xl hover:shadow-blue-300/60
+                      font-subheading font-[600] text-[14px] text-white rounded-full
+                      bg-primary hover:bg-primary-hover transition-colors
+                      shadow-custom shadow-custom
+                      transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-custom-hover hover:shadow-custom
                       overflow-hidden relative group"
         >
           <span
@@ -120,7 +120,7 @@ export default function Navbar() {
         {/* ── Hamburger ── */}
         <button
           onClick={() => setMenuOpen((v) => !v)}
-          className="lg:hidden flex flex-col gap-[5px] p-2 rounded-xl hover:bg-violet-50 transition-colors"
+          className="lg:hidden flex flex-col gap-[5px] p-2 rounded-xl hover:bg-primary-soft transition-colors"
           aria-label="Toggle menu"
         >
           <span
@@ -142,16 +142,16 @@ export default function Navbar() {
       {menuOpen && (
         <div
           className="lg:hidden absolute top-full right-0 w-72 h-screen
-                        bg-white/95 backdrop-blur-2xl border-l border-violet-100
-                        shadow-2xl shadow-violet-100/50 py-8 px-6 flex flex-col gap-2"
+                        bg-white/95 backdrop-blur-2xl border-l border-border-subtle
+                        shadow-2xl shadow-custom py-8 px-6 flex flex-col gap-2"
         >
           {navLinks.map(({ label, href }) => (
             <a
               key={href}
               href={href}
               onClick={(e) => go(e, href)}
-              className="px-4 py-3.5 text-violet-900 font-medium rounded-xl no-underline
-                          hover:bg-violet-50 hover:text-violet-600 transition-all duration-200 text-base"
+              className="px-4 py-3.5 text-primary font-subheading font-[600] rounded-xl no-underline
+                          hover:bg-primary-soft hover:text-primary transition-all duration-200 text-[15px] uppercase tracking-widest"
             >
               {label}
             </a>
@@ -159,8 +159,8 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => go(e, "#contact")}
-            className="mt-4 text-center px-4 py-3 rounded-full text-white font-bold no-underline
-                        bg-gradient-to-r from-violet-600 to-purple-500 shadow-md shadow-violet-300/40"
+            className="mt-4 text-center px-4 py-3 rounded-full text-white font-subheading font-[600] text-[14px] no-underline
+                        bg-primary shadow-custom shadow-custom"
           >
             Let&apos;s Work Together
           </a>
