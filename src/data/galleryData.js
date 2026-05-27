@@ -1,0 +1,57 @@
+// Gallery data organized by category
+export const galleryData = [
+  // Game Icons
+  { id: 1, title: "Golden Lion Scatter", category: "Game Icons", image: "https://picsum.photos/600/750?random=101", height: "tall" },
+  { id: 2, title: "Wild Card Symbol", category: "Game Icons", image: "https://picsum.photos/600/500?random=102", height: "medium" },
+  { id: 3, title: "Emerald Gem Wild", category: "Game Icons", image: "https://picsum.photos/600/800?random=103", height: "tall" },
+  { id: 4, title: "Fire Phoenix Icon", category: "Game Icons", image: "https://picsum.photos/600/450?random=104", height: "short" },
+  { id: 5, title: "Lucky Clover", category: "Game Icons", image: "https://picsum.photos/600/700?random=105", height: "tall" },
+  { id: 6, title: "Crystal Ball Wild", category: "Game Icons", image: "https://picsum.photos/600/550?random=106", height: "medium" },
+  { id: 7, title: "Dragon Eye Bonus", category: "Game Icons", image: "https://picsum.photos/600/650?random=107", height: "medium" },
+  { id: 8, title: "Thunder Strike", category: "Game Icons", image: "https://picsum.photos/600/800?random=108", height: "tall" },
+
+  // Characters
+  { id: 9, title: "Ancient Warrior", category: "Characters", image: "https://picsum.photos/600/900?random=201", height: "tall" },
+  { id: 10, title: "Forest Sorceress", category: "Characters", image: "https://picsum.photos/600/700?random=202", height: "tall" },
+  { id: 11, title: "Pirate King", category: "Characters", image: "https://picsum.photos/600/500?random=203", height: "medium" },
+  { id: 12, title: "Dragon Rider", category: "Characters", image: "https://picsum.photos/600/800?random=204", height: "tall" },
+  { id: 13, title: "Golden Pharaoh", category: "Characters", image: "https://picsum.photos/600/600?random=205", height: "medium" },
+  { id: 14, title: "Ice Queen", category: "Characters", image: "https://picsum.photos/600/900?random=206", height: "tall" },
+  { id: 15, title: "Shadow Ninja", category: "Characters", image: "https://picsum.photos/600/550?random=207", height: "medium" },
+
+  // Symbols
+  { id: 16, title: "Royal Crown", category: "Symbols", image: "https://picsum.photos/600/600?random=301", height: "medium" },
+  { id: 17, title: "Ace of Spades", category: "Symbols", image: "https://picsum.photos/600/800?random=302", height: "tall" },
+  { id: 18, title: "Lucky Seven", category: "Symbols", image: "https://picsum.photos/600/500?random=303", height: "medium" },
+  { id: 19, title: "Diamond Ring", category: "Symbols", image: "https://picsum.photos/600/700?random=304", height: "tall" },
+  { id: 20, title: "Golden Bell", category: "Symbols", image: "https://picsum.photos/600/450?random=305", height: "short" },
+  { id: 21, title: "Ruby Heart", category: "Symbols", image: "https://picsum.photos/600/750?random=306", height: "tall" },
+  { id: 22, title: "Star Burst", category: "Symbols", image: "https://picsum.photos/600/550?random=307", height: "medium" },
+  { id: 23, title: "Horseshoe Luck", category: "Symbols", image: "https://picsum.photos/600/650?random=308", height: "medium" },
+
+  // Backgrounds
+  { id: 24, title: "Ancient Egypt Temple", category: "Backgrounds", image: "https://picsum.photos/800/500?random=401", height: "wide" },
+  { id: 25, title: "Enchanted Forest", category: "Backgrounds", image: "https://picsum.photos/800/600?random=402", height: "wide" },
+  { id: 26, title: "Underwater Kingdom", category: "Backgrounds", image: "https://picsum.photos/800/500?random=403", height: "wide" },
+  { id: 27, title: "Viking Longship", category: "Backgrounds", image: "https://picsum.photos/800/550?random=404", height: "wide" },
+  { id: 28, title: "Space Galaxy", category: "Backgrounds", image: "https://picsum.photos/800/700?random=405", height: "tall" },
+  { id: 29, title: "Mayan Ruins", category: "Backgrounds", image: "https://picsum.photos/800/500?random=406", height: "wide" },
+  { id: 30, title: "Haunted Mansion", category: "Backgrounds", image: "https://picsum.photos/800/600?random=407", height: "wide" },
+
+  // UI & Frames
+  { id: 31, title: "Gold HUD Frame", category: "UI & Frames", image: "https://picsum.photos/700/500?random=501", height: "wide" },
+  { id: 32, title: "Win Celebration Screen", category: "UI & Frames", image: "https://picsum.photos/700/700?random=502", height: "medium" },
+  { id: 33, title: "Bonus Popup", category: "UI & Frames", image: "https://picsum.photos/700/600?random=503", height: "medium" },
+  { id: 34, title: "Spin Button Pack", category: "UI & Frames", image: "https://picsum.photos/700/500?random=504", height: "wide" },
+  { id: 35, title: "Payline Indicators", category: "UI & Frames", image: "https://picsum.photos/700/800?random=505", height: "tall" },
+  { id: 36, title: "Free Spins Banner", category: "UI & Frames", image: "https://picsum.photos/700/550?random=506", height: "medium" },
+  { id: 37, title: "Menu Screen Design", category: "UI & Frames", image: "https://picsum.photos/700/650?random=507", height: "medium" },
+];
+
+export const categorySections = [
+  { id: "game-icons", label: "Game Icons", emoji: "🎰", description: "Wild and scatter symbols crafted for maximum visual impact" },
+  { id: "characters", label: "Characters", emoji: "🧙", description: "Iconic game characters with rich narrative and personality" },
+  { id: "symbols", label: "Symbols", emoji: "💎", description: "High-value symbols designed to excite and reward players" },
+  { id: "backgrounds", label: "Backgrounds", emoji: "🎨", description: "Immersive world-building art that sets the scene and theme" },
+  { id: "ui-frames", label: "UI & Frames", emoji: "🖼️", description: "Premium UI elements and HUD designs for slot interfaces" },
+];

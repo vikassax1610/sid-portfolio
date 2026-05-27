@@ -1,0 +1,234 @@
+.gallery {
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* BG Blobs */
+.bgBlob1 {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+  top: 10%; right: -200px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.bgBlob2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, transparent 70%);
+  bottom: 20%; left: -150px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Main Header */
+.mainHeader {
+  text-align: center;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  color: #1e1b4b;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.mainDesc {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gallery Section */
+.gallerySection {
+  margin-bottom: 120px;
+}
+
+.gallerySection:last-child { margin-bottom: 0; }
+
+.sectionHeader {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #7c3aed;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: #1e1b4b;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.sectionDesc {
+  font-size: 1rem;
+  color: #9ca3af;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* Masonry Grid */
+.masonryGrid {
+  columns: 4;
+  column-gap: 18px;
+}
+
+.masonryItem {
+  break-inside: avoid;
+  margin-bottom: 18px;
+}
+
+/* Card */
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Image heights */
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.tall .imageWrap { height: 380px; }
+.medium .imageWrap { height: 280px; }
+.short .imageWrap { height: 200px; }
+.wide .imageWrap { height: 220px; }
+
+.image {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .image { transform: scale(1.08); }
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(30, 27, 75, 0.85) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.card:hover .overlay { opacity: 1; }
+
+.overlayContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .overlayContent { transform: translateY(0); }
+
+.viewIcon {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .viewIcon { transform: scale(1.1); }
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cardCategory {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .masonryGrid { columns: 3; }
+}
+
+@media (max-width: 768px) {
+  .masonryGrid { columns: 2; column-gap: 12px; }
+  .masonryItem { margin-bottom: 12px; }
+  .container { padding: 0 20px; }
+  .gallery { padding: 80px 0; }
+  .gallerySection { margin-bottom: 80px; }
+  .mainHeader { margin-bottom: 60px; }
+}
+
+@media (max-width: 480px) {
+  .masonryGrid { columns: 1; }
+  .tall .imageWrap { height: 320px; }
+}

@@ -1,0 +1,191 @@
+.footer {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 -4px 40px rgba(124, 58, 237, 0.08);
+}
+
+.gradientBar {
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #f59e0b, #7c3aed);
+  background-size: 200% auto;
+  animation: gradient-flow 4s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 60px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  margin-bottom: 36px;
+}
+
+/* Logo */
+.logoSection { display: flex; flex-direction: column; gap: 20px; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.logoIcon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7, #ec4899);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
+}
+
+.logoText { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; }
+
+.logoSlot {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoArtist { color: #1e1b4b; }
+
+.tagline {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.socialLinks { display: flex; gap: 10px; }
+
+.socialLink {
+  width: 40px; height: 40px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.socialLink:hover {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Nav */
+.navSection { display: flex; flex-direction: column; gap: 20px; }
+
+.colTitle {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #9ca3af;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navLink {
+  font-size: 0.9rem;
+  color: #4c1d95;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLink::before {
+  content: '';
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover { color: #7c3aed; }
+.navLink:hover::before { width: 14px; }
+
+/* Contact */
+.contactSection { display: flex; flex-direction: column; gap: 20px; }
+
+.contactList { display: flex; flex-direction: column; gap: 12px; }
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* Bottom */
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.bottomLinks { display: flex; gap: 20px; }
+
+.bottomLink {
+  font-size: 0.83rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bottomLink:hover { color: #7c3aed; }
+
+@media (max-width: 900px) {
+  .topRow { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .logoSection { grid-column: 1 / -1; }
+  .container { padding: 50px 24px 32px; }
+}
+
+@media (max-width: 580px) {
+  .topRow { grid-template-columns: 1fr; gap: 32px; }
+  .bottomRow { flex-direction: column; text-align: center; }
+}
