@@ -1,3 +1,5 @@
+import { Coins, Wand2, MountainSnow, LayoutTemplate, Sparkles, Video } from 'lucide-react';
+
 export const testimonialsData = [
   {
     id: 1,
@@ -42,10 +44,10 @@ export const testimonialsData = [
 ];
 
 export const servicesData = [
-  { id: 1, icon: "🎰", title: "Slot Symbols & Icons", description: "Wild, scatter, bonus, and high-value symbols crafted with premium quality for slot games.", price: "From $150/set" },
-  { id: 2, icon: "🧙", title: "Character Design", description: "Memorable, thematic game characters with animation-ready layered files.", price: "From $300/char" },
-  { id: 3, icon: "🌄", title: "Background Art", description: "Full scene background artwork that immerses players in your game's world.", price: "From $400/bg" },
-  { id: 4, icon: "🖼️", title: "UI & Frame Design", description: "Complete slot UI kits — HUD, menus, buttons, win screens, and more.", price: "From $500/kit" },
-  { id: 5, icon: "✨", title: "Full Game Skin", description: "End-to-end complete slot game art package — all assets in one go.", price: "Custom Quote" },
-  { id: 6, icon: "🎬", title: "Animation Ready Assets", description: "Layered, animation-ready PSD/AI files for seamless engine integration.", price: "From $200/asset" },
+  { id: 1, icon: <Coins size={28} color="#f59e0b" />, title: "Slot Symbols & Icons", description: "Wild, scatter, bonus, and high-value symbols crafted with premium quality for slot games.", price: "From $150/set" },
+  { id: 2, icon: <Wand2 size={28} color="#1769FF" />, title: "Character Design", description: "Memorable, thematic game characters with animation-ready layered files.", price: "From $300/char" },
+  { id: 3, icon: <MountainSnow size={28} color="#06b6d4" />, title: "Background Art", description: "Full scene background artwork that immerses players in your game's world.", price: "From $400/bg" },
+  { id: 4, icon: <LayoutTemplate size={28} color="#8b5cf6" />, title: "UI & Frame Design", description: "Complete slot UI kits — HUD, menus, buttons, win screens, and more.", price: "From $500/kit" },
+  { id: 5, icon: <Sparkles size={28} color="#10b981" />, title: "Full Game Skin", description: "End-to-end complete slot game art package — all assets in one go.", price: "Custom Quote" },
+  { id: 6, icon: <Video size={28} color="#ef4444" />, title: "Animation Ready Assets", description: "Layered, animation-ready PSD/AI files for seamless engine integration.", price: "From $200/asset" },
 ];

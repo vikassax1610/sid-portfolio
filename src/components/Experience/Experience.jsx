@@ -1,31 +1,33 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
+import { Paintbrush, Handshake, Star, Gamepad2, Sprout, Rocket, Crown, Gem } from 'lucide-react';
+
 const stats = [
-  { number:'100+', label:'Projects Completed', icon:'🎨', color:'#1769FF' },
-  { number:'50+',  label:'Happy Clients',       icon:'🤝', color:'#1769FF' },
-  { number:'5+',   label:'Years Experience',    icon:'⭐', color:'#f59e0b' },
-  { number:'10+',  label:'Genres Covered',      icon:'🎮', color:'#06b6d4' },
+  { number:'100+', label:'Projects Completed', icon:<Paintbrush size={32} color="#1769FF" />, color:'#1769FF' },
+  { number:'50+',  label:'Happy Clients',       icon:<Handshake size={32} color="#1769FF" />, color:'#1769FF' },
+  { number:'5+',   label:'Years Experience',    icon:<Star size={32} color="#f59e0b" />, color:'#f59e0b' },
+  { number:'10+',  label:'Genres Covered',      icon:<Gamepad2 size={32} color="#06b6d4" />, color:'#06b6d4' },
 ];
 
 const timeline = [
   {
-    year:'2019', icon:'🌱', title:'Started Freelancing', company:'Independent',
+    year:'2019', icon:<Sprout size={28} color="#10b981" />, title:'Started Freelancing', company:'Independent',
     desc:'Began creating slot art for indie studios, building a diverse portfolio across classic and video slots.',
     achievements:['First 10 clients','Mastered symbol design','Built production workflow'],
   },
   {
-    year:'2021', icon:'🚀', title:'Senior Artist', company:'GoldReel Studios',
+    year:'2021', icon:<Rocket size={28} color="#1769FF" />, title:'Senior Artist', company:'GoldReel Studios',
     desc:'Joined a mid-sized studio as senior game artist, leading visual direction for 20+ slot titles.',
     achievements:['Led a team of 3','20+ shipped titles','Designed award-winning games'],
   },
   {
-    year:'2023', icon:'👑', title:'Lead Slot Designer', company:'NeonSpin Interactive',
+    year:'2023', icon:<Crown size={28} color="#f59e0b" />, title:'Lead Slot Designer', company:'NeonSpin Interactive',
     desc:'Promoted to lead designer, responsible for full game art direction and brand identity for flagship titles.',
     achievements:['Art directed 5 flagship slots','Managed $2M+ budgets','40% engagement uplift'],
   },
   {
-    year:'2024', icon:'💎', title:'Freelance Studio Owner', company:'Self / Studio',
+    year:'2024', icon:<Gem size={28} color="#06b6d4" />, title:'Freelance Studio Owner', company:'Self / Studio',
     desc:'Returned to freelance with a premium studio model, serving top-tier clients with complete game art packages.',
     achievements:['50+ global clients','Full-service offering','Premium positioning'],
   },

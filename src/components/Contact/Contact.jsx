@@ -1,15 +1,16 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { Mail, MessageCircle, Paintbrush, Globe, Palette, PartyPopper } from 'lucide-react';
 
 const projectTypes = ['Game Icons / Symbols','Character Design','Background Art','UI & Frame Design','Full Game Skin','Animation-Ready Assets','Other'];
 const budgets      = ['Under $500','$500 - $1,000','$1,000 - $3,000','$3,000 - $10,000','$10,000+','Let\'s Discuss'];
 
 const contactDetails = [
-  { icon:'📧', label:'Email',    value:'hello@slotartist.com', href:'mailto:hello@slotartist.com' },
-  { icon:'💬', label:'Telegram', value:'@slotartist',          href:'#' },
-  { icon:'🎨', label:'Behance',  value:'behance.net/slotartist',href:'#' },
-  { icon:'🌐', label:'LinkedIn', value:'linkedin.com/slotartist',href:'#' },
+  { icon:<Mail size={24} color="#1769FF" />, label:'Email',    value:'hello@slotartist.com', href:'mailto:hello@slotartist.com' },
+  { icon:<MessageCircle size={24} color="#06b6d4" />, label:'Telegram', value:'@slotartist',          href:'#' },
+  { icon:<Paintbrush size={24} color="#f59e0b" />, label:'Behance',  value:'behance.net/slotartist',href:'#' },
+  { icon:<Globe size={24} color="#10b981" />, label:'LinkedIn', value:'linkedin.com/slotartist',href:'#' },
 ];
 
 export default function Contact() {
@@ -76,7 +77,7 @@ export default function Contact() {
                    style={{ background:'linear-gradient(to bottom, transparent 40%, rgba(30,27,75,.45))' }} />
               <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 px-5 py-2.5
                               bg-glass backdrop-blur-md rounded-full text-[13px] font-subheading font-[600] uppercase tracking-widest text-primary whitespace-nowrap">
-                🎨 Let&apos;s Create Together
+                <Palette size={16} color="#1769FF" /> Let&apos;s Create Together
               </div>
             </div>
 
@@ -104,7 +105,7 @@ export default function Contact() {
 
             {submitted ? (
               <div className="flex flex-col items-center justify-center gap-5 py-12 text-center min-h-[360px]">
-                <div className="text-6xl animate-bounce-in">🎉</div>
+                <div className="text-6xl animate-bounce-in text-primary mb-2 flex justify-center"><PartyPopper size={64} color="#f59e0b" /></div>
                 <h3 className="text-[1.8rem] font-heading font-bold text-text-main">Message Sent!</h3>
                 <p className="text-[1.05rem] font-sans font-medium text-text-sec leading-[1.8] max-w-[340px]">
                   Thanks for reaching out! I&apos;ll review your project details and get back to you within 24 hours.

@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500
+      className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500
       ${
         scrolled
           ? "py-3 bg-glass backdrop-blur-2xl border-b border-glass-border shadow-custom shadow-custom"
@@ -53,9 +53,7 @@ export default function Navbar() {
             S
           </div>
           <span className="font-heading font-[800] text-[1.2rem] leading-none tracking-[-0.02em]">
-            <span className="gradient-text-vivid">
-              Sidhant
-            </span>
+            <span className="gradient-text-vivid">Siddhant</span>
             <span className="text-text-main"> Sharma</span>
           </span>
         </a>
@@ -73,7 +71,7 @@ export default function Navbar() {
                      ${
                        active === id
                          ? "text-primary bg-primary-soft"
-                         : "text-primary hover:text-primary hover:bg-primary-soft"
+                         : "text-black hover:text-primary hover:bg-primary-soft"
                      }`}
                 >
                   {label}
