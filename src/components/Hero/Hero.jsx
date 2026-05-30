@@ -254,7 +254,7 @@ export default function Hero() {
         <div className="flex items-center justify-center">
           <div
             ref={artRef}
-            className="relative w-full max-w-[480px] transition-transform duration-100 will-change-transform animate-fade-right [animation-delay:.2s]"
+            className="relative w-full max-w-[900px] transition-transform duration-100 will-change-transform animate-fade-right [animation-delay:.2s]"
           >
             {/* Glow */}
             <div
@@ -274,12 +274,12 @@ export default function Hero() {
                             group"
             >
               <Image
-                src="https://picsum.photos/520/640?random=800"
+                src="https://picsum.photos/800/640?random=800"
                 alt="Featured Slot Art"
-                width={360}
+                width={800}
                 height={440}
                 priority
-                className="block w-full h-auto lg:h-[540px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                className="block w-full h-auto lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
               <div
                 className="absolute inset-0"
